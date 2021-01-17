@@ -21,7 +21,7 @@
 ## Getting Started
 
 ```js
-import { Task } from 'https://x.nest.land/task/@1.0.0/mod.js'
+import { Task } from 'https://x.nest.land/task@1.0.0/mod.js'
 const { fromPromise } = Task
 
 fromPromise(() => Promise.resolve(':tada:'))
@@ -63,30 +63,3 @@ MIT
 
 The core code for this library was initiated from code shared by Brian Londorf in a course from frontend masters. If you want to learn more about functional programming in javascript check it out: https://frontendmasters.com/courses/hardcore-js-v2/
 
-
-
-# hyper63 Task
-
-A Task ADT for deno
-
-## Usage
-
-``` js
-Task.of('fp rocks')
-  .map(x => x.toUpperCase())
-  .map(x => x + '!')
-  .fork(
-    console.log,
-    console.log
-  )
-```
-
-## Testing
-
-```
-deno test mod_test.js
-```
-
-## License
-
-MIT
