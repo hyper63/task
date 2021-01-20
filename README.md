@@ -20,11 +20,13 @@
 
 ## Getting Started
 
+see example.js
+
 ```js
 import { Task } from 'https://x.nest.land/task@1.0.0/mod.js'
 const { fromPromise } = Task
 
-fromPromise(() => Promise.resolve(':tada:'))
+fromPromise((x) => Promise.resolve(x + ' :tada:'))('Hello')
   .fork(
     e => console.log('promise was rejected'),
     r => console.log(r)
@@ -49,7 +51,12 @@ export { Task } from 'https://x.nest.land/task@1.0.0/mod.js'
 
 ## Methods
 
-TODO
+* Task.of - creates a Task with a value eg. Task.of('foo')
+* Task.resolve - creates a Task with a value and puts Task in resolved state
+* Task.reject - creates a Task with a value in rejected state
+* Task.fromPromise - returns a constructor function that will create a Task
+* Task.fromNode - returns a constructor function that will create a Task
+
 
 ## Contributing
 

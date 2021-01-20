@@ -1,3 +1,18 @@
+/**
+ * @typedef {Object} Task
+ * @property {function} fork
+ * @property {function} ap
+ * @property {function} map
+ * @property {function} chain
+ * @property {function} concat
+ * @property {function} fold
+ *
+ * @type {(rejected: function, resolved: function) => Task} TaskFn
+ */
+/**
+ * @param {TaskFn} fork
+ * @returns {Task}
+ */
 export const Task = (fork) => ({
   fork,
   ap: (other) =>
@@ -14,10 +29,34 @@ export const Task = (fork) => ({
     ),
 });
 
+/**
+ * @param {any} x
+ * @returns {Task}
+ */
 Task.of = (x) => Task((rej, res) => res(x));
+
+/**
+ * @param {any} x
+ * @returns {Task}
+ */
 Task.resolve = (x) => Task((rej, res) => res(x));
+
+/**
+ * @param {any} x
+ * @returns {Task}
+ */
 Task.rejected = (x) => Task((rej, res) => rej(x));
+
+/**
+ * @param {Promise} fn
+ * @returns {Task}
+ */
 Task.fromPromise = (fn) =>
   (...args) => Task((rej, res) => fn(...args).then(res).catch(rej));
+
+/**
+ * @param {function} fn
+ * @returns {Task}
+ */
 Task.fromNode = (fn) =>
   (...args) => Task((rej, res) => fn(...args, (e, x) => e ? rej(e) : res(x)));
