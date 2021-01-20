@@ -1,0 +1,11 @@
+{
+  "name": "task",
+  "version": "1.0.1",
+  "description": "Async ADT wrapper",
+  "entry": "./mod.js",
+  "files": ["./README.md"],
+  "repo": "https://github.com/hyper63/task",
+  "homepage": "https://github.com/hyper63/task",
+  "stable": true
+}
+
