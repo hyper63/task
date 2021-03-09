@@ -15,6 +15,7 @@ type TaskFn = {
 };
 
 type Task = {
+  ['@@type']: string;
   fork: TaskFn;
   ap: Other;
   map: F;
@@ -25,6 +26,7 @@ type Task = {
 };
 
 export const Task = (fork: TaskFn) => ({
+  ['@@type']: 'task',
   fork,
   ap: (other: Task): Task =>
     Task((rejected: U, resolved: U): any =>

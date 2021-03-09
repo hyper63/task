@@ -23,7 +23,7 @@
 see example.js
 
 ```js
-import { Task } from "https://x.nest.land/task@1.0.3/mod.ts";
+import { Task } from "https://x.nest.land/task@1.0.4/mod.ts";
 const { fromPromise } = Task;
 
 fromPromise((x) => Promise.resolve(x + " :tada:"))("Hello")
@@ -40,7 +40,7 @@ This is a Deno module available to import from https://nest.land/package/task
 deps.js
 
 ```
-export { Task } from 'https://x.nest.land/task@1.0.3/mod.js'
+export { Task } from 'https://x.nest.land/task@1.0.4/mod.js'
 ```
 
 ## Features

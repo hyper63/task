@@ -1,6 +1,6 @@
 {
   "name": "task",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Async ADT wrapper",
   "entry": "./mod.ts",
   "files": [
