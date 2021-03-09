@@ -4,8 +4,8 @@
 <p align="center">
   <a href="https://github.com/hyper63/task/tags/"><img src="https://img.shields.io/github/tag/hyper63/task" alt="Current Version" /></a>
   <img src="https://github.com/hyper63/task/workflows/.github/workflows/deno.yml/badge.svg" />
-  
-  </p>
+
+</p>
 
 ---
 
@@ -23,40 +23,47 @@
 see example.js
 
 ```js
-import { Task } from 'https://x.nest.land/task@1.0.0/mod.js'
-const { fromPromise } = Task
+import { Task } from "https://x.nest.land/task@1.0.3/mod.ts";
+const { fromPromise } = Task;
 
-fromPromise((x) => Promise.resolve(x + ' :tada:'))('Hello')
+fromPromise((x) => Promise.resolve(x + " :tada:"))("Hello")
   .fork(
-    e => console.log('promise was rejected'),
-    r => console.log(r)
-  )
+    (e) => console.log("promise was rejected"),
+    (r) => console.log(r),
+  );
 ```
 
 ## Installation
 
-This is a Deno module available to import from 
-https://nest.land/package/task 
+This is a Deno module available to import from https://nest.land/package/task
 
 deps.js
 
 ```
-export { Task } from 'https://x.nest.land/task@1.0.0/mod.js'
+export { Task } from 'https://x.nest.land/task@1.0.3/mod.js'
 ```
 
 ## Features
 
-* fromPromise
-* fromNode
+- fromPromise
+- fromNode
 
-## Methods
+## methods
 
-* Task.of - creates a Task with a value eg. Task.of('foo')
-* Task.resolve - creates a Task with a value and puts Task in resolved state
-* Task.reject - creates a Task with a value in rejected state
-* Task.fromPromise - returns a constructor function that will create a Task
-* Task.fromNode - returns a constructor function that will create a Task
+- map - applys function to value
+- chain - applys function that retuns task
+- ap
+- concat - forks the passed in task then concats the task with the current one
+- fork - fork runs the task contained function
+- toPromise - forks the task and returns a promise
 
+## constructors
+
+- Task.of - creates a Task with a value eg. Task.of('foo')
+- Task.resolve - creates a Task with a value and puts Task in resolved state
+- Task.reject - creates a Task with a value in rejected state
+- Task.fromPromise - returns a constructor function that will create a Task
+- Task.fromNode - returns a constructor function that will create a Task
 
 ## Contributing
 
@@ -68,5 +75,7 @@ MIT
 
 ## Acknowledgements
 
-The core code for this library was initiated from code shared by Brian Londorf in a course from frontend masters. If you want to learn more about functional programming in javascript check it out: https://frontendmasters.com/courses/hardcore-js-v2/
-
+The core code for this library was initiated from code shared by Brian Londorf
+in a course from frontend masters. If you want to learn more about functional
+programming in javascript check it out:
+https://frontendmasters.com/courses/hardcore-js-v2/

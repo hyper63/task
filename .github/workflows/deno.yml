@@ -8,7 +8,7 @@ jobs:
     name: Test with deno ${{ matrix.deno }}
     
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       
       - name: Setup Deno
         uses: denolib/setup-deno@master
@@ -18,7 +18,7 @@ jobs:
         run: deno --version
 
       - name: Check format
-        run: deno fmt --check *.js
+        run: deno fmt 
 
       - name: Run tests
-        run: deno test mod_test.js
+        run: deno test
