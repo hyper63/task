@@ -2,7 +2,7 @@
 <p align="center">Task is a ADT that can wrap async functions and make them execute in a lazy path. This allows for better error management and consistents results. You can use `fromPromise` and `fromNode` to wrap promises and callbacks then chain them together in a lazy pipeline that does not execute the async code until `fork` is applied.</a>
 </p>
 <p align="center">
-  <a href="https://github.com/hyper63/task/tags/"><img src="https://img.shields.io/github/tag/hyper63/task/all.svg" alt="Current Version" /></a>
+  <a href="https://github.com/hyper63/task/tags/"><img src="https://img.shields.io/github/v/tag/hyper63/task.svg?sort=semver" alt="Current Version" /></a>
   <img src="https://github.com/hyper63/task/workflows/.github/workflows/deno.yml/badge.svg" />
 
 </p>
